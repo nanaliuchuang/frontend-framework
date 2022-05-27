@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Excercise 5</title>
+    <style>
+        .stopwatch{
+            text-align: center;
+        }
+        p{
+            font-size: 2em;
+        }
+        button{
+            margin: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="stopwatch">
+        <h1>Excercise 5</h1>
+        <p><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>
+        <button id="start">Bắt đầu</button>
+        <button id="reset">Đặt lại</button>
+        <button id="stop">Dừng</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var hours = "00";
+            var minutes = "00";
+            var seconds = "00";
+            var minisec = "00"
+            var appenHours = $("#hours");
+            var appendMinutes = $("#minutes");
+            var appenSeconds = $("#seconds");
+            var Interval;
+            $("#start").click(function(){
+                clearInterval(Interval);
+                Interval = setInterval(startTimer,10);
+            });
+            $("#stop").click(function(){
+                clearInterval(Interval);
+            });
+            $("#reset").click(function(){
+                clearInterval(Interval);
+                hours = "00";
+                minutes = "00";
+                seconds = "00";
+                appenHours.text(hours);
+                appendMinutes.text(minutes);
+                appenSeconds.text(seconds);
+            });
+            function startTimer(){
+                minisec++;
+                if( minisec <= 9){
+                    console.log("0" + minisec);
+                }
+                if(minisec > 9){
+                    console.log(minisec);
+                }
+                if(minisec > 99){
+                    seconds++;
+                    appenSeconds.text("0" + seconds);
+                    minisec = 0;
+                    console.log("0" + minisec);
+                }
+                if(seconds > 9){
+                    appenSeconds.text(seconds);
+                }
+                if(seconds > 59){
+                    minutes++;
+                    appendMinutes.text("0" + minutes);
+                    seconds = 0;
+                    appenSeconds.text("0" + 0);
+                }
+                if(minutes > 9){
+                    appendMinutes.text(minutes);
+                }
+                if(minutes > 59){
+                    hours++;
+                    appenHours.text("0" + hours);
+                    minutes = 0;
+                    appendMinutes.text("0" + 0);
+                }
+                if(hours > 9){
+                    appenHours.text(hours);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

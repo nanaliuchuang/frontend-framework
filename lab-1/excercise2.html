@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Excercise 2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #f00;
+        }
+        button{
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="n" value="0">
+    <button id="check">Check</button>
+    <div id="result"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("input").change(function(){
+                var n = $("#n").val();
+                var result = $('#result');
+                var reverse = 0;
+                for(var i = n; i > 0; i = i / 10){
+                        reverse = reverse * 10 + i % 10;
+                    if(reverse == n){
+                        $("#check").click(function(){
+                            result.text("N là số thuận nghịch");
+                        });
+                    }
+                    else{
+                        $("#check").click(function(){
+                            result.text("N không phải số thuận nghịch");
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
