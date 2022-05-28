@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Excercise 3</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            margin-left: 15px;
+            font-size: 1em;
+            border: 1px solid #f00;
+        }
+        div{
+            margin-top: 20px;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nameA" value="0">
+    <input type="text" id="nameB" value="0">
+    <div>Max: <span id="result"></span></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("input").change(function(){
+            var a = $("#nameA").val();
+            var b = $("#nameB").val();
+            var result = $('#result');
+            if(a > b){
+                result.text(a);
+            }
+            else{
+                result.text(b);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

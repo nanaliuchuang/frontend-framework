@@ -1,0 +1,23 @@
+<!-- Xây dựng một giao diện gồm thẻ div chứacác thẻcon trực tiếp lần lượt là: p, span, h2, h3, h4, h5, h6, p như hình: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Excercise 1</title>
+</head>
+<body>
+    <p>Đây là dòng p</p>
+    <span>Đừng click vào tôi!</span>
+    <h2>Xin chào ^^^</h2>
+    <h3>Trang chủ hôm nay</h3>
+    <h4>Thời tiết</h4>
+    <h5>Dòng thời gian</h5>
+    <h6>Blog</h6>
+    <p>Calendar</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("span").nextUntil("p").css({"color": "red", "border" : "2px solid #f00"});
+        });
+    </script>
+</body>
+</html>

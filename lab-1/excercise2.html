@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Excercise 2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #f00;
+        }
+        button{
+            margin: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="n" value="0">
+    <button id="check">Check</button>
+    <div id="result"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function checkreverseN(n){
+            var m = n;
+            var reverse = 0;
+            while(m > 0){
+                reverse = reverse * 10 + ( m % 10);
+                m = Math.floor( m / 10);
+            }
+            if(reverse == n){
+                 return true;
+            }
+            else{
+                return false;
+            }
+        }
+        $(function(){
+            $("input").change(function(){
+                var n = Number($("#n").val());
+                var result = $('#result');
+               if(isNaN(n) || n < 0){
+                   alert("Please enter number n!")
+               }
+               else{
+                   if(checkreverseN(n)){
+                       $("#result").text(`${n}` + " is reveriable number!");
+                   }
+                   else{
+                    $("#result").text(`${n}` + " is NOT reveriable number!");
+                   }
+               }
+            });
+        });
+    </script>
+</body>
+</html>
