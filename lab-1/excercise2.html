@@ -23,24 +23,35 @@
     <div id="result"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        function checkreverseN(n){
+            var m = n;
+            var reverse = 0;
+            while(m > 0){
+                reverse = reverse * 10 + ( m % 10);
+                m = Math.floor( m / 10);
+            }
+            if(reverse == n){
+                 return true;
+            }
+            else{
+                return false;
+            }
+        }
         $(function(){
             $("input").change(function(){
-                var n = $("#n").val();
+                var n = Number($("#n").val());
                 var result = $('#result');
-                var reverse = 0;
-                for(var i = n; i > 0; i = i / 10){
-                        reverse = reverse * 10 + i % 10;
-                    if(reverse == n){
-                        $("#check").click(function(){
-                            result.text("N là số thuận nghịch");
-                        });
-                    }
-                    else{
-                        $("#check").click(function(){
-                            result.text("N không phải số thuận nghịch");
-                        });
-                    }
-                }
+               if(isNaN(n) || n < 0){
+                   alert("Please enter number n!")
+               }
+               else{
+                   if(checkreverseN(n)){
+                       $("#result").text(`${n}` + " is reveriable number!");
+                   }
+                   else{
+                    $("#result").text(`${n}` + " is NOT reveriable number!");
+                   }
+               }
             });
         });
     </script>
