@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 1</title>
+    <style>
+        body{
+            text-align: center;
+            background: #6f2fc4;
+        }
+        #div1{
+            color: rgba(238, 255, 0, 0.801);
+            font-size: 1.5em;
+            margin-bottom: 2em;
+        }
+        button{
+            padding: 8px 18px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"><h2>Let Jquery AJAX Change. This Text</h2></div>
+    <button>Get External Content</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#div1").load("demo_text.txt");
+            });
+        });
+    </script>
+</body>
+</html>

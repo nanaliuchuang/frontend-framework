@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 4</title>
+</head>
+<body>
+    <input name="id" placeholder="Enter news id want to get" />
+
+    <button>Get News By Id</button>
+
+    <span
+
+      ><br /><br />Result:
+
+      <p id="result"></p
+
+    ></span>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+$("button").click(function () {
+
+  let id = $("input[name='id']").val();
+
+
+
+  $.ajax({
+
+    type: "GET",
+
+    url: `https://629a06d67b866a90ec47e89f.mockapi.io/product/${id}`,
+
+    dataType: "json",
+
+    success: function (response, status) {
+
+      let result = JSON.stringify(response);
+
+      $("#result").text(result);
+
+    },
+
+  });
+
+});
+
+});
+    </script>
+</body>
+</html>

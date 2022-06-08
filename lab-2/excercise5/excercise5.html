@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 5</title>
+    <link rel="stylesheet" href="./ckeditor_4.19.0_full/ckeditor/contents.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./animate.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+        header{
+            position: absolute;
+        }
+        header .logo{
+            font-size: 2.6em;
+            text-transform: uppercase;
+            color: #8d98bd;
+            letter-spacing: 0.05em;
+            font-weight: bold;
+        }
+        .owl-stage{
+            margin: 100px 0;
+        }
+        .owl-nav{
+                font-size: 4em;
+                font-weight: 800;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 20%;
+            }
+        .item img{
+                width: 200px;
+                height: 200px;
+                border: 2px solid #8d98bd;
+       }
+       .hotsale{
+           text-align: center;
+           margin-top: 20px;
+           font-size: 2em;
+           font-weight: bold;
+           color: blueviolet;
+       }
+       .item h2{
+           text-align: center;
+           margin: 10px 0;
+           font-size: 1.6em;
+           font-weight: 600;
+       }
+        .product{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+            grid-gap: 50px;
+            margin: 50px 10%;
+            max-width: 1240px;
+            padding: 20px;
+        }
+        .product{
+            padding: 20px;
+        }
+        .product img{
+            width: 100%;
+            display: block;
+        }
+        .product p{
+            font-size: 2em;
+            color: #8d98bd;
+            text-align: center;
+        }
+        #cke_1_top {
+            background: #8d98bd;
+        }
+
+        .content {
+            width: 700px;
+        }
+
+        .selector{
+            display: flex;
+            margin: 0 20px;
+            justify-content: center;
+            line-height: 2em;
+            gap: 10px;
+        }
+        input{
+            padding: 5px 20px;
+            color: #000;
+        }
+        .leftside{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .rightside{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .content{
+            max-width: 100%;
+        }
+        input{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+        <header>
+            <section class="wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                <h1 class="logo">Logo</h1>
+            </section>
+        </header>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="./img/1.jpg">
+                <h2>Đồng hồ</h2>
+                <span>$70</span>
+            </div>
+            <div class="item">
+                <img src="./img/2.jpg">
+                <h2>Điện thoại</h2>
+                <span>$235</span>
+            </div>
+            <div class="item">
+                <img src="./img/3.jpg">
+                <h2>Quần Jean</h2>
+                <span>$87</span>
+            </div>
+            <div class="item">
+                <img src="./img/4.jpg">
+                <h2>Áo Sơ mi</h2>
+                <span>$58</span>
+            </div>
+            <div class="item">
+                <img src="./img/5.jpg">
+                <h2>Áo thun</h2>
+                <span>$35</span>
+            </div>
+            <div class="item">
+                <img src="./img/6.jpg">
+                <h2>Dây chuyền</h2>
+                <span>$75</span>
+            </div>
+        </div>
+        <h1 class="hotsale">Các mẫu hot hiện nay</h1>
+            <div class="product"></div>
+            <div class="selector">
+                <div class="leftside">
+                    <label>Nhập họ và tên</label>
+                    <input type="text" placeholder="Tên">
+                    <label>Email</label>
+                    <input type="text" placeholder="Email">
+                    <label>Số Điện Thoại</label>
+                    <input type="number" placeholder="(+84)">
+                </div>
+                <div class="rightside">
+                            <div class="content">
+            <textarea id="editor1" name="editor1" cols="80" rows="10"><p>Gửi phản hồi ...</p></textarea>
+            <input onclick="getValue();" type="button" value="Gứi phản hồi" />
+            <div id="ckeditorValue"></div>
+        </div>
+                </div>
+            </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./ckeditor_4.19.0_full/ckeditor/ckeditor.js"></script>
+    <script src="./ckeditor_4.19.0_full/ckeditor/adapters/jquery.js"></script>
+    <script src="./wow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let products = "";
+            $.get(
+                `https://629a06d67b866a90ec47e89f.mockapi.io/product`,
+                function (data, status) {
+                    let result = JSON.stringify(data);
+                    console.log(data.length);
+                    for (let i = 0; i < data.length; i++) {
+                        products += `<div class="product">
+                    <img src="${data[i].product_image}"/>
+                    <p class="product_name">${data[i].product_name}</p>
+                    <p class="product_price">${data[i].product_price}</p>
+            </div>`;
+                    }
+                    $(".product").html(products);
+                }
+            );
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+        });
+        function getValue() {
+            $("#ckeditorValue").html($("#editor1").val());
+        }
+         $("#editor1").ckeditor();
+        new WOW().init();
+    </script>
+</body>
+
+</html>
