@@ -1,0 +1,36 @@
+@whitecolor: #fff;
+@blackcolor: #000;
+@greycolor: #f0ecec;
+
+body{
+    background: @greycolor;
+}
+header{
+    text-align: center;
+    padding: 100px;
+    font-family: 'Times New Roman', Times, serif
+}
+header h1{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+header p{
+    text-transform: none;
+    letter-spacing: 2px;
+}
+.menu{
+    display: flex;
+    background: @whitecolor;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+}
+.menu li{
+    list-style: none;
+}
+.menu li a{
+    text-decoration: none;
+    color: @blackcolor;
+    font-size: 1.3em;
+}
