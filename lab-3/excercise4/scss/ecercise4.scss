@@ -1,0 +1,124 @@
+$purplecolor: #c84494;
+$bluecolor: #2450b0;
+$whitecolor: #fff;
+$blackcolor: #000;
+$fontfamily: 'Poppins',sans-serif;
+$greycolor: #bbb;
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient($purplecolor,$bluecolor);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    background: $whitecolor;
+    max-width: 430px;
+    width: 100%;
+}
+.container .formBx{
+    padding: 30px;
+}
+.container .formBx h2{
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: $fontfamily;
+}
+.formBx .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.input-field input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 35px;
+    outline: none;
+    border: none;
+    background: $greycolor;
+    padding-left: 50px;
+    color: $blackcolor;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.input-field ion-icon{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: $blackcolor;
+    font-size: 1.3em;
+    margin-left: 5px;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+}
+.checkbox input[type="checkbox"]{
+    accent-color: $purplecolor;
+    font-size: 2em;
+}
+.checkbox p{
+    font-size: 1.1em;
+    margin-left: 10px;
+    color: $greycolor;
+}
+.login input{
+    width: 100%;
+    height: 50px;
+    background: $purplecolor;
+    border: none;
+    color: $whitecolor;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.signin{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 30px;
+    background: $whitecolor;
+    border: 2px solid $greycolor;
+    cursor: pointer;
+}
+.center{
+    text-align: center;
+    color: $greycolor;
+}
+.box p{
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.box.f p{
+    color: $bluecolor;
+}
+.box img{
+    max-width: 20px;
+}
+.signup{
+    margin-top: 70px;
+    text-align: center;
+    color: $greycolor;
+    font-size: 1.2em;
+}
+.signup a{
+    color: $greycolor;
+    font-weight: bold;
+}

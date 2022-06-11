@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 3</title>
+    <link rel="stylesheet" href="./ckeditor_4.19.0_full/ckeditor/contents.css">
+    <style>
+        body{
+            background: #0a2a;
+        }
+        .selector{
+            display: flex;
+            margin: 0 20px;
+            justify-content: center;
+            line-height: 2em;
+            gap: 10px;
+        }
+        input{
+            padding: 5px 20px;
+            color: #000;
+        }
+        .leftside, .ritghside{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .rightside{
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .content{
+            padding: 0 10%;
+        }
+        input{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selector">
+        <div class="leftside">
+            <label>Mở bán từ</label>
+            <input  type="datetime-local" value="2020-01-11T21:00">
+            <label>Số vé phát hành</label>
+            <input type="number" placeholder="1779">
+            <label>Giá vé</label>
+            <input type="number" placeholder="350000">
+        </div>
+        <div class="rightside">
+            <label>Ngày ngừng bán</label>
+            <input type="datetime-local" value="2020-10-11T11:00">
+            <label>Ngày phát hành</label>
+            <input type="date" value="2020-12-10">
+            <label>Đơn vị tính</label>
+            <input type="text" placeholder="VND">
+        </div>
+    </div>
+    <div class="content">
+        <textarea id="editor1" name="editor1" cols="80" rows="10"><p>
+        - Vé đứng
+        <br><br>
+        - Khu vực gân sân khấu nhất
+        <br><br>
+        - Giá vé đã bao gồm bảo hiểm tai nạn
+    </p></textarea>
+    <input type="text" id="val" size="30" />
+    <input onclick="setValue();" type="button" value="Set value" />
+    <input onclick="getValue();" type="button" value="Get value" />
+    <div id="ckeditorValue"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./ckeditor_4.19.0_full/ckeditor/ckeditor.js"></script>
+        <script src="./ckeditor_4.19.0_full/ckeditor/adapters/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+      $("#editor1").ckeditor();
+    });
+    function setValue() {
+              $("#editor1").val($("input#val").val());
+            }
+            function getValue() {
+              $("#ckeditorValue").html($("#editor1").val());
+            }
+    </script>
+</body>
+
+</html>
